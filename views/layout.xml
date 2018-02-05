@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="DcWeb">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/website_theme_dcweb/static/src/js/js/jquery.js"></script>
+            <script type="text/javascript" src="/website_theme_dcweb/static/src/js/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/website_theme_dcweb/static/src/js/js/plugins.js"></script>
+
+            <!-- REVOLUTION STYLE SHEETS -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/revolution/css/settings.css"/>
+            <!-- REVOLUTION LAYERS STYLES -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/revolution/css/layers.css"/>
+            <!-- REVOLUTION NAVIGATION STYLES -->
+            <link rel="stylesheet" type="text/css"
+                  href="/website_theme_dcweb/static/src/revolution/css/navigation.css"/>
+
+            <!-- BOOTSTRAP STYLES -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/css/bootstrap.css"/>
+            <!-- TEMPLATE STYLES -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/style.css"/>
+            <!-- RESPONSIVE STYLES -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/css/responsive.css"/>
+            <!-- CUSTOM STYLES -->
+            <link rel="stylesheet" type="text/css" href="/website_theme_dcweb/static/src/css/custom.css"/>
+        </xpath>
+    </template>
+
+
+    <template id="header" inherit_id="website.layout" name="novomenu">
+        <xpath expr="//div[@id='wrapwrap']" position="replace">
+            <div id="wrapwrap" t-att-class="pageName or ''">
+
+                <div id="wrapper">
+
+                    <div class="topbar">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 text-left cenmobile">
+                                    <div class="topmenu">
+                                        <span>
+                                            <i class="fa fa-envelope-o"></i>
+                                            contato@datacenterweb.com.br
+                                        </span>
+                                        <span>
+                                            <i class="fa fa-phone-square"></i>
+                                            WhatsApp: (22) 9 9226-3443
+                                        </span>
+                                        <span class="hidden-xs">
+                                            <i class="fa fa-comments-o"></i>
+                                            <a href="https://painel.datacenterweb.com.br/submitticket.php?step=2"
+                                               target="_blank">Chat
+                                            </a>
+                                        </span>
+                                    </div><!-- end callus -->
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 text-right cenmobile">
+
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end topbar -->
+                    </div><!-- end topbar -->
+
+                    <header class="header">
+                        <div class="container-fluid">
+                            <nav class="navbar navbar-default yamm">
+                                <div class="container">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                            <span class="sr-only">Navegação Mobile</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="/">
+                                            <img src="/website_theme_dcweb/static/src/images/logo.png" alt=""/>
+                                        </a>
+                                    </div>
+
+                                    <div id="navbar " class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav" id="top_menu">
+                                             <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                                        <t t-call="website.submenu"/>
+                                                    </t>
+
+                                            <li class="dropdown has-submenu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                   aria-haspopup="true" aria-expanded="false">Servidores
+                                                    <span class="fa fa-angle-down"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="servidor-dedicado.php">Servidor Dedicado</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="servidor-vps.php">Servidor VPS (Semi-Dedicado)</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="megamenu dropdown hasmenu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                   aria-haspopup="true" aria-expanded="false">Seja um Revendedor
+                                                    <span class="label label-success hidden-xs">Novidade</span>
+                                                    <span class="fa fa-angle-down"></span>
+                                                </a>
+                                                <ul class="dropdown-menu withbgcolor">
+                                                    <li>
+                                                        <div class="yamm-content clearfix">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <div class="widget clearfix">
+                                                                        <div class="big-title">
+                                                                            <h3>Seja um revendedor
+                                                                                <br/>
+                                                                                <span>Veja nosso pacote combo</span>
+                                                                            </h3>
+                                                                        </div><!-- end big-title -->
+
+                                                                        <div class="email-widget">
+                                                                            <p>Conheça nosso pacote combo, com vários
+                                                                                serviços inclusos, pague por 1 combo e
+                                                                                venda como quiser, veja o que está
+                                                                                incluso
+                                                                            </p>
+                                                                            <ul class="check-list">
+                                                                                <li>Revenda de Hospedagem</li>
+                                                                                <li>Revenda de eMarketing</li>
+                                                                                <li>Revenda de VPS</li>
+                                                                                <li>Proteção Anti-Spam</li>
+                                                                                <li>Proteção com Firewall/Anti-DDOS</li>
+                                                                            </ul><!-- end check -->
+                                                                            <button class="btn btn-danger"
+                                                                                    style="margin-top:5px;">Contratar
+                                                                                Agora
+                                                                            </button>
+                                                                        </div><!-- end email widget -->
+                                                                    </div>
+                                                                </div><!-- end col -->
+
+
+                                                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                                                    <div class="widget clearfix">
+                                                                        <div class="widget-title">
+                                                                            <h4>Revenda de Hospedagem</h4>
+                                                                        </div><!-- end widget-title -->
+
+                                                                        <div class="link-widget">
+                                                                            <ul>
+                                                                                <ul class="check-list">
+                                                                                    <li>Planos com Espaço Ilimitado</li>
+                                                                                    <li>Transferencia Ilimitada</li>
+                                                                                    <li>Banco de dados Ilimitados</li>
+                                                                                    <li>Contas de E-mail Ilimitados</li>
+                                                                                    <li>Painel cPanel/WHM</li>
+                                                                                </ul><!-- end check -->
+
+                                                                            </ul><!-- end check -->
+                                                                            <a href="revenda-hospedagem.php">
+                                                                                <button class="btn btn-default"
+                                                                                        style="margin-top:28px;">
+                                                                                    Contratar Agora
+                                                                                </button>
+                                                                            </a>
+                                                                        </div><!-- end link-widget -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                                                    <div class="widget clearfix">
+                                                                        <div class="widget-title">
+                                                                            <h4>Revenda de E-mail Marketing</h4>
+                                                                        </div><!-- end widget-title -->
+
+                                                                        <div class="link-widget">
+                                                                            <ul>
+                                                                                <ul class="check-list">
+                                                                                    <li>Planos com Envios Ilimitados
+                                                                                    </li>
+                                                                                    <li>Contatos Ilimitados</li>
+                                                                                    <li>Campanhas Ilimitadas</li>
+                                                                                    <li>Estatisticas de Clicks -
+                                                                                        Abertura
+                                                                                    </li>
+                                                                                    <li>Painel Interspire</li>
+                                                                                </ul><!-- end check -->
+                                                                            </ul><!-- end check -->
+                                                                            <a href="revenda-emailmarketing.php">
+                                                                                <button class="btn btn-default"
+                                                                                        style="margin-top:28px;">
+                                                                                    Contratar Agora
+                                                                                </button>
+                                                                            </a>
+                                                                        </div><!-- end link-widget -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2 col-sm-12 col-xs-12">
+                                                                    <div class="widget clearfix">
+                                                                        <div class="widget-title">
+                                                                            <h4>Em todos os planos</h4>
+                                                                        </div><!-- end widget-title -->
+
+                                                                        <div class="link-widget">
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <a href="#">Suporte via WhatsApp</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://painel.datacenterweb.com.br/submitticket.php?step=2">
+                                                                                        Suporte via E-mail
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://painel.datacenterweb.com.br/submitticket.php?step=2">
+                                                                                        Suporte via Ticket
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">Logo Marca Propria</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">Você cria seu pacote</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">Dominio Personalizado
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">DNS Personalizados</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#">Firewall / Anti-DDOS</a>
+                                                                                </li>
+                                                                            </ul><!-- end check -->
+                                                                        </div><!-- end link-widget -->
+                                                                    </div><!-- end widget -->
+                                                                </div>
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown has-submenu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                   aria-haspopup="true" aria-expanded="false">Marketing
+                                                    <span class="fa fa-angle-down"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="email-marketing.php">E-mail marketing</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="revenda-emailmarketing.php">Revenda de E-mail
+                                                            marketing
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <a href="https://painel.datacenterweb.com.br/submitticket.php"
+                                                   target="_blank">Suporte
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="nav navbar-nav navbar-right hidden-xs">
+                                            <li class="">
+                                                <a href="https://painel.datacenterweb.com.br">Área do Cliente</a>
+                                            </li>
+                                        </ul>
+                                    </div><!--/.nav-collapse -->
+                                </div><!--/.container-fluid -->
+                            </nav><!-- end nav -->
+                        </div><!-- end container -->
+                    </header><!-- end header -->
+
+                </div> <!-- end wrapper -->
+
+            </div><!-- end wrapwrap odoo -->
+        </xpath>
+    </template>
+
+
+
+
+
+</odoo>
